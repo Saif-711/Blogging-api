@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -31,4 +32,6 @@ public class BlogPost {
     @NotNull(message = "createdAt is required")
     private LocalDateTime createdAt=LocalDateTime.now();
     private LocalDateTime updatedAt=LocalDateTime.now();
+    @ElementCollection
+    private List<String>tags;
 }
